@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.pengzhixian.demo.MainActivity">
+    <demowidget.NoScrollViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tab"
+        >
+
+
+    </demowidget.NoScrollViewPager>
+
+<android.support.design.widget.TabLayout
+    android:id="@+id/tab"
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+</android.support.design.widget.TabLayout>
+
+</RelativeLayout>
