@@ -43,11 +43,7 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
         setItem()
         tab.addOnTabSelectedListener(this)
         request()
-        NetManager().getHotShop(
-//                10, //网络请求 5条数据 num表示网络请求返回的数据数量
-                { print(it.data.toString()) }, //成功的回掉接口
-                { Toast.makeText(this, it, Toast.LENGTH_SHORT).show() } //失败的回掉接口
-        )
+
 
 
     }

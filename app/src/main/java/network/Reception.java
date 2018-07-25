@@ -1,6 +1,21 @@
 package network;
 
+import android.content.Context;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.example.pengzhixian.demo.R;
+
+import java.util.ArrayList;
 import java.util.List;
+
+import fragment.MainHomeFragment;
+import network.bean.ShopHotBean2;
 
 public class Reception {
         /**
@@ -471,4 +486,83 @@ public class Reception {
     // 下面会在实例进行说明
 
 
+        MainHomeFragment.ListShopApapter listShopApapter=null;
+
+//        class ListApapter extends RecyclerView.Adapter{
+//
+//                Context mContext;
+//                List<ShopHotBean2> list=new ArrayList<>();
+//
+//                public  ListApapter(Context context,List<ShopHotBean2> list){
+//                        this.mContext=context;
+//                        this.list=list;
+//
+//                }
+//
+//
+//
+//                @Override
+//                public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+//                        if(viewType==111){
+//                                View view = LayoutInflater.from(mContext).inflate(R.layout.main_fragment_recycle_item, parent, false);
+//                                return new HeadViewHolder(view);
+//
+//                        }else if(viewType==222) {
+//                                View view = LayoutInflater.from(mContext).inflate(R.layout.main_fragment_recycle_item, parent, false);
+//                                return new HeadViewHolder(view);
+//                        }
+//
+//
+//                        return null;
+//                }
+//
+//                @Override
+//                public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+//                        if (holder instanceof HeadViewHolder) {
+//
+////                                ShopHotBean2
+//                                ((HeadViewHolder) holder).txt_view.setText("hahaha");
+//
+//                        }
+//
+//
+//
+//
+//
+//                }
+//
+//                @Override
+//                public int getItemCount() {
+//                        return list.size();
+//                }
+//
+//                @Override
+//                public int getItemViewType(int position) {
+////                        return super.getItemViewType(position);
+//                        if(position/2==0){
+//                                return 111;
+//                        }else{
+//                                return 222;
+//                        }
+//
+//
+//                }
+//                public  class HeadViewHolder extends RecyclerView.ViewHolder {
+//
+//                        ImageView img_view;
+//                        TextView txt_view;
+//
+//
+//                        public HeadViewHolder(View itemView) {
+//                                super(itemView);
+//                                img_view=itemView.findViewById(R.id.img_view) ;
+//                                txt_view=itemView.findViewById(R.id.txt_view) ;
+//
+//
+//
+//                        }
+//                }
+//
+//                }
         }
+
