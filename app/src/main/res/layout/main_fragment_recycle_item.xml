@@ -1,22 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:id="@+id/item_layut"
     android:layout_width="match_parent"
-    android:layout_height="120dp">
+    android:textAlignment="center"
+    android:paddingLeft="18dp"
+    android:padding="18dp"
+    android:gravity="center_horizontal"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/item_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+
 
     <ImageView
         android:id="@+id/img_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eee"
         android:src="@mipmap/ic_launcher_round"
+
         />
     <TextView
         android:id="@+id/txt_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lines="2"
+        android:maxLines="2"
+        android:ellipsize="end"
         android:text="我是比套题"
+        android:layout_below="@+id/img_view"
+
         />
 
+    </RelativeLayout>
 
-
-</LinearLayout>
+</RelativeLayout>

@@ -26,6 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory
             override fun onResponse(call: Call<ImageBean>?, response: Response<ImageBean>) {
 
                 Log.e("test",""+response.body())
+
                 success(response.body()!!)
             }
             override fun onFailure(call: Call<ImageBean>?, t: Throwable?) {

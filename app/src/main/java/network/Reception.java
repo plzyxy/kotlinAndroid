@@ -1,21 +1,9 @@
 package network;
 
-import android.content.Context;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-
-import com.example.pengzhixian.demo.R;
-
-import java.util.ArrayList;
 import java.util.List;
 
+import adapter.ListShopAdapter;
 import fragment.MainHomeFragment;
-import network.bean.ShopHotBean2;
 
 public class Reception {
         /**
@@ -486,7 +474,7 @@ public class Reception {
     // 下面会在实例进行说明
 
 
-        MainHomeFragment.ListShopApapter listShopApapter=null;
+//        ListShopAdapter listShopAdapter =null;
 
 //        class ListApapter extends RecyclerView.Adapter{
 //

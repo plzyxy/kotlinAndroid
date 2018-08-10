@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
         *我们可以给库函数 arrayOf() 传递每一项的值来创建Array，arrayOf(1, 2, 3) 创建了一个[1, 2, 3] 这样的数组
         */
         val image = arrayOf(R.mipmap.ic_launcher,R.mipmap.ic_launcher_round,R.mipmap.ic_launcher,R.mipmap.ic_launcher_round)
-        val list=listOf<String>("tab1","tab2","tab3","tab4")
+        val list=listOf<String>("Home","Cate","ShopCar","Me")
         iv_head.text=list[position]
         im.setImageResource(image[position])
         /**
@@ -129,7 +129,8 @@ class Tab1Fragment(var name:String): Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
 
-       val txt :TextView=TextView(context)
+
+       val txt =TextView(context)
         txt.setText(name)
         return txt
 
