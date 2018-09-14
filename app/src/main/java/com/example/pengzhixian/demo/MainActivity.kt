@@ -1,6 +1,7 @@
 package com.example.pengzhixian.demo
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
@@ -11,6 +12,9 @@ import android.util.Log
 import android.view.*
 import android.widget.TextView
 import android.widget.Toast
+import com.luck.picture.lib.PictureSelector
+import com.luck.picture.lib.config.PictureConfig
+import fragment.MainCategoryFragment
 import fragment.MainHomeFragment
 
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,6 +27,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import utils.CommonUtil
 
 class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
     override fun onTabReselected(tab: TabLayout.Tab?) {
@@ -48,6 +53,34 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
 
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        Log.e( "eeee"+resultCode, data.toString()+requestCode)
+        if (resultCode == RESULT_OK) {
+            if (requestCode == PictureConfig.CHOOSE_REQUEST) {
+                Log.e("jinlaile", data.toString())
+                val selectList = PictureSelector.obtainMultipleResult(data)
+                Log.e("eeee", selectList.size.toString())
+                var path = ""
+                if (selectList != null && selectList.size > 0) {
+                    val localMedia = selectList[0]
+                    if (localMedia.isCompressed) {
+                        path = localMedia.compressPath
+                    } else if (localMedia.isCut) {
+                        path = localMedia.cutPath
+                    } else {
+                        path = localMedia.path
+                    }
+                }
+               var filepath = CommonUtil.amendRotatePhoto(path, this)
+                Log.e("eeeepath", filepath)
+                //                imageView.setImageBitmap(BitmapFactory.decodeFile(filepath));
+            var   bitmap = CommonUtil.createAsciiPic(filepath, this)
+//                imageView.setImageBitmap(bitmap)
+            }
+        }
+    }
+
     private fun initView() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
 
@@ -63,7 +96,7 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
          * 第二种使用listof
          */
         val tab1:MainHomeFragment=MainHomeFragment("111111")
-        val tab2:Tab1Fragment=Tab1Fragment("22222222")
+        val tab2:MainCategoryFragment=MainCategoryFragment()
         val tab3:Tab1Fragment=Tab1Fragment("333333")
         val tab4:Tab1Fragment=Tab1Fragment("444444")
         var lsit =listOf<Fragment>(tab1,tab2,tab3,tab4)
@@ -126,7 +159,7 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
 @SuppressLint("ValidFragment")
 class Tab1Fragment(var name:String): Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
 
 
@@ -137,6 +170,7 @@ class Tab1Fragment(var name:String): Fragment() {
     }
 
 }
+
 
 
 class KotlinPagerAdapter(var mList : List<Fragment>, fm: FragmentManager?) : FragmentStatePagerAdapter(fm) {

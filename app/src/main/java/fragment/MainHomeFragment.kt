@@ -30,7 +30,7 @@ class MainHomeFragment(var title:String) : Fragment() {
 lateinit var recycleview:RecyclerView
     lateinit var swiperefreshlayout:SwipeRefreshLayout
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
          val view = inflater?.inflate(R.layout.fragment_home_main,null)
               recycleview = view!!.findViewById(R.id.recycle_view)
@@ -39,7 +39,7 @@ lateinit var recycleview:RecyclerView
 
 
         var listb = ArrayList<ShopHotBean2.DataBean.HotVendorBean.ListBean> ()
-        listShopAdapter = ListShopAdapter(context,listb)
+        listShopAdapter = ListShopAdapter(this!!.context!!,listb)
         if(listShopAdapter !=null){
             recycleview.adapter= listShopAdapter
 

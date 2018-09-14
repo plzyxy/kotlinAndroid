@@ -14,6 +14,7 @@ import android.view.WindowManager
 
 
 
+@Suppress("DEPRECATION")
 /**
  * Created by pengzhixian on 2018/7/30.
  */
@@ -259,11 +260,11 @@ class UIUtils {
          * @return
          */
         fun getStatusBarHeight(context: Context): Int {
-            var c: Class<*>? = null
-            var obj: Any? = null
-            var field: Field? = null
-            var x = 0
-            var statusBarHeight = 0
+            var c: Class<*>?
+            var obj: Any?
+            var field: Field?
+            var x: Int
+            var statusBarHeight: Int
             try {
                 c = Class.forName("com.android.internal.R\$dimen")
                 obj = c!!.newInstance()
