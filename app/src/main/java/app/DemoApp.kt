@@ -10,16 +10,6 @@ import android.os.Message
  */
 class DemoApp:Application(){
 
-
-
-
-
-
-
-
-
-
-
     companion object {
         private var mHandler: Handler? = null
 
