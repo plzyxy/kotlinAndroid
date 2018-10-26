@@ -9,6 +9,7 @@ import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.recyclerview.R.attr.spanCount
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +19,7 @@ import com.example.pengzhixian.demo.R
 import network.NetManager
 import network.bean.ShopHotBean2
 import okio.Timeout
+import java.io.Console
 import java.util.ArrayList
 
 @SuppressLint("ValidFragment")
@@ -56,8 +58,9 @@ lateinit var recycleview:RecyclerView
 
 
             override fun getSpanSize(position: Int): Int {
-                return if (position == 0) {
-                    1
+//                Log.e("eee",""+position)
+                return  if (position == 0) {
+                    2
                 } else if (position == listShopAdapter!!.getItemCount() - 1) {
                     2
                 } else {
@@ -78,7 +81,7 @@ lateinit var recycleview:RecyclerView
 
     private fun initListenner() {
         swiperefreshlayout.setOnRefreshListener(SwipeRefreshLayout.OnRefreshListener {
-
+        Log.d("ddd","下拉刷新")
           var  runnable: Runnable  =  Runnable() {
                   kotlin.run {
 

@@ -493,11 +493,11 @@ public class Reception {
 //                public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 //                        if(viewType==111){
 //                                View view = LayoutInflater.from(mContext).inflate(R.layout.main_fragment_recycle_item, parent, false);
-//                                return new HeadViewHolder(view);
+//                                return new HotItemViewHolder(view);
 //
 //                        }else if(viewType==222) {
 //                                View view = LayoutInflater.from(mContext).inflate(R.layout.main_fragment_recycle_item, parent, false);
-//                                return new HeadViewHolder(view);
+//                                return new HotItemViewHolder(view);
 //                        }
 //
 //
@@ -506,10 +506,10 @@ public class Reception {
 //
 //                @Override
 //                public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-//                        if (holder instanceof HeadViewHolder) {
+//                        if (holder instanceof HotItemViewHolder) {
 //
 ////                                ShopHotBean2
-//                                ((HeadViewHolder) holder).txt_view.setText("hahaha");
+//                                ((HotItemViewHolder) holder).txt_view.setText("hahaha");
 //
 //                        }
 //
@@ -535,13 +535,13 @@ public class Reception {
 //
 //
 //                }
-//                public  class HeadViewHolder extends RecyclerView.ViewHolder {
+//                public  class HotItemViewHolder extends RecyclerView.ViewHolder {
 //
 //                        ImageView img_view;
 //                        TextView txt_view;
 //
 //
-//                        public HeadViewHolder(View itemView) {
+//                        public HotItemViewHolder(View itemView) {
 //                                super(itemView);
 //                                img_view=itemView.findViewById(R.id.img_view) ;
 //                                txt_view=itemView.findViewById(R.id.txt_view) ;

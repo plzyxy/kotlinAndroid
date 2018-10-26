@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'com.jakewharton.butterknife'
+
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -42,4 +44,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //图片选择的库
     implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+
+    //butterknife 注解库
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
