@@ -112,7 +112,20 @@ lateinit var recycleview:RecyclerView
                 {
                     Toast.makeText(DemoApp.getContext(), it.toString(), Toast.LENGTH_SHORT).show()
                 } //失败的回掉接口
-        )
+        ,"1.0.0")
+         NetManager().getHotBanner(
+//                10, //网络请求 5条数据 num表示网络请求返回的数据数量
+                {
+//                    if(listShopAdapter !=null){
+//                        listShopAdapter!!.setData(it.data)
+//                    }
+
+                    print(it.data.toString()) }, //成功的回掉接口
+                {
+                    Toast.makeText(DemoApp.getContext(), it.toString(), Toast.LENGTH_SHORT).show()
+                } //失败的回掉接口
+        ,"1.0.0")
+
 
     }
 

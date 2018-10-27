@@ -18,6 +18,8 @@ interface PictureApi {
                    @Field("num") num: Int) : Call<ImageBean>
 
 
-
+     fun getPict(@Field("showapi_appid") showapi_appid: String,
+                   @Field("showapi_sign") showapi_sign: String,
+                   @Field("num") num: Int) : Call<ImageBean>
 
 }

@@ -1,6 +1,6 @@
 package network
 
-import network.bean.ImageBean
+import network.bean.HomeAutoImageEntity
 import network.bean.ShopHotBean2
 import retrofit2.Call
 import retrofit2.http.Field
@@ -14,7 +14,13 @@ interface ShopHotApi {
 //https://api.teayork.com/goods/hot
 
         @POST("goods/hot")
-        fun getHotShop() : Call<ShopHotBean2>
+         @FormUrlEncoded
+        fun getHotShop(@Field("version") version: String) : Call<ShopHotBean2>
+
+        @POST("app/banner")
+         @FormUrlEncoded
+        fun getHotBanner(@Field("version") version: String) : Call<HomeAutoImageEntity>
+
 
 
 

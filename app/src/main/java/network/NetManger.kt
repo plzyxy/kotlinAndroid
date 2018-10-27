@@ -1,6 +1,7 @@
 package network
 
 import android.util.Log
+import network.bean.HomeAutoImageEntity
 import network.bean.ImageBean
 import network.bean.ShopHotBean2
 
@@ -36,10 +37,10 @@ import retrofit2.converter.gson.GsonConverterFactory
         })
     }
 
+  var hotShopApi: ShopHotApi = retrofit.create(ShopHotApi::class.java)
+    open fun getHotShop( success: (ShopHotBean2) -> Unit, fail: (String) -> Unit,num:String) {
 
-    open fun getHotShop( success: (ShopHotBean2) -> Unit, fail: (String) -> Unit) {
-        var hotShopApi: ShopHotApi = retrofit.create(ShopHotApi::class.java)
-        var call: Call<ShopHotBean2> = hotShopApi.getHotShop()
+        var call: Call<ShopHotBean2> = hotShopApi.getHotShop(num)
         call.enqueue(object : Callback<ShopHotBean2> {
             override fun onResponse(call: Call<ShopHotBean2>?, response: Response<ShopHotBean2>) {
 
@@ -47,6 +48,21 @@ import retrofit2.converter.gson.GsonConverterFactory
                 success(response.body()!!)
             }
             override fun onFailure(call: Call<ShopHotBean2>?, t: Throwable?) {
+                Log.e("test",""+t.toString())
+                fail(t.toString())
+            }
+        })
+    }
+    open fun getHotBanner( success: (HomeAutoImageEntity) -> Unit, fail: (String) -> Unit,num:String) {
+//        var hotShopApi: ShopHotApi = retrofit.create(ShopHotApi::class.java)
+        var call: Call<HomeAutoImageEntity> = hotShopApi.getHotBanner(num)
+        call.enqueue(object : Callback<HomeAutoImageEntity> {
+            override fun onResponse(call: Call<HomeAutoImageEntity>?, response: Response<HomeAutoImageEntity>) {
+
+                Log.e("test",""+response.body())
+                success(response.body()!!)
+            }
+            override fun onFailure(call: Call<HomeAutoImageEntity>?, t: Throwable?) {
                 Log.e("test",""+t.toString())
                 fail(t.toString())
             }
